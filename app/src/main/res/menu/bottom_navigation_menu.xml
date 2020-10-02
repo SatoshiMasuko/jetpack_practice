@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_black_18dp"
+        android:title="@string/icon_home"/>
+    <item
+        android:id="@+id/calculateFragment"
+        android:icon="@drawable/ic_calculate_24px"
+        android:title="@string/icon_calculate"/>
+    <item
+        android:id="@+id/scheduleFragment"
+        android:icon="@drawable/ic_schedule_24px"
+        android:title="@string/icon_schedule"/>
+    <item
+        android:id="@+id/simulateFragment"
+        android:icon="@drawable/ic_simulate_24px"
+        android:title="@string/icon_simulate"/>
+</menu>
