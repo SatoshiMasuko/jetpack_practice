@@ -2,8 +2,11 @@ package com.example.jetpackpractice.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.jetpackpractice.R
 import kotlinx.android.synthetic.main.activity_start.*
 
@@ -14,5 +17,10 @@ class StartActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment)
         setupWithNavController(bottom_navigation,navController)
+
+        setSupportActionBar(toolbar)
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.scheduleFragment,R.id.simulateFragment,R.id.calculateFragment))
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
     }
 }

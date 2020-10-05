@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_send_sms"
+        android:title="send_SMS"
+        android:icon="@drawable/ic_send_24px"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_share"
+        android:title="favorite"
+        android:icon="@drawable/ic_favorite_border_black_18dp"
+        app:showAsAction="ifRoom"/>
+</menu>
