@@ -11,4 +11,6 @@
     <string name="icon_calculate">計算</string>
     <string name="icon_schedule">予定</string>
     <string name="icon_simulate">シミュレータ</string>
+    <string name="error">An_error_occurred_while_loading_data</string>
+    <string name="description">anyStringValue</string>
 </resources>
