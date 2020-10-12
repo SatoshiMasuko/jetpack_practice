@@ -21,7 +21,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:layout_marginEnd="8dp">
 
             <ImageView
                 android:id="@+id/issue_user_background"
@@ -33,31 +33,36 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_margin="8dp"/>
-
-            <TextView
-                android:id="@+id/issue_title"
+            <HorizontalScrollView
+                android:id="@+id/title_scroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{issues.title}"
                 app:layout_constraintStart_toEndOf="@id/issue_user_background"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="8dp"
-                android:singleLine="true"
-                android:ellipsize="end"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:breakStrategy = "simple"/>
-
-            <TextView
-                android:id="@+id/issue_user_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{issues.user.name}"
-                app:layout_constraintStart_toEndOf="@id/issue_user_background"
-                app:layout_constraintTop_toBottomOf="@+id/issue_title"
-                android:layout_margin="8dp"
-                android:textSize="12sp"/>
-
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/issue_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@{issues.title}"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:id="@+id/issue_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@{issues.user.name}"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/issue_user_background"
+                        app:layout_constraintTop_toBottomOf="@+id/title_scroll" />
+                </LinearLayout>
+            </HorizontalScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>
