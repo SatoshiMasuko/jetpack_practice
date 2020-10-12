@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 //@Database(entities = arrayOf(Issues::class), version = 1)
 //abstract class IssuesDatabase:RoomDatabase() {
-//    abstract fun dogDat():IssueDataObject
+//    abstract fun issuesDao():IssueDataObject
 //
 //    companion object{
 //        @Volatile private var instance: IssuesDatabase? = null
