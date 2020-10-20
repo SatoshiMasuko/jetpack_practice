@@ -3,6 +3,7 @@ package com.example.jetpackpractice.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jetpackpractice.R
 import com.example.jetpackpractice.databinding.IssuesItemBinding
@@ -24,9 +25,13 @@ class IssuesListAdapter(val issuesList: ArrayList<Issues>): RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: IssuesViewHolder, position: Int) {
         holder.view.issues = issuesList[position]
+        holder.itemView.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
+        }
     }
 
     override fun getItemCount()= issuesList.size
+
 
     class IssuesViewHolder(var view: IssuesItemBinding): RecyclerView.ViewHolder(view.root)
 }

@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.TransitionInflater
 import com.example.jetpackpractice.R
 import com.example.jetpackpractice.databinding.IssuesItemBinding
 import com.example.jetpackpractice.view.adapter.IssuesListAdapter
@@ -22,14 +23,13 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+//        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        viewModel = ViewModelProviders.of(this).get(IssuesViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(IssuesViewModel::class.java)
         viewModel.display()
         issuesList.apply{
             layoutManager = LinearLayoutManager(context)
@@ -43,6 +43,7 @@ class HomeFragment : Fragment() {
             viewModel.display()
             refreshLayout.isRefreshing = false
         }
+
         observeViewModel()
     }
     private fun observeViewModel(){
