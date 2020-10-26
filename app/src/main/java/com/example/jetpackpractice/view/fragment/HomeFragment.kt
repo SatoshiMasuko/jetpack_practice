@@ -7,6 +7,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionInflater
 import com.example.jetpackpractice.R
@@ -19,9 +20,7 @@ import kotlinx.android.synthetic.main.issues_item.*
 
 class HomeFragment : Fragment() {
 
-    var title = String
-    var body = String
-    var createdDate = String
+
 
 
 //    private lateinit var viewModel: IssuesViewModel
@@ -63,7 +62,19 @@ class HomeFragment : Fragment() {
             issues?.let {
                 issuesList.visibility = View.VISIBLE
                 issuesListAdapter.update(issues)
+                issuesListAdapter.setOnItemClickListener(object:IssuesListAdapter.OnItemClickListener{
+                    override fun onItemClickListener(view: View, position: Int) {
+//                        val title = issues[position].title.toString()
+//                        val body = issues[position].body.toString()
+//                        val userImageUrl = issues[position].user?.profile_image_url.toString()
+//                        val createdDate = issues[position].created_at.toString()
+//
+//                        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(title,createdDate,body,userImageUrl)
+//                        findNavController().navigate(action)
+                    }
+                })
             }
+
         })
         viewModel.loadingError.observe(viewLifecycleOwner, Observer { isError ->
             isError.let{
