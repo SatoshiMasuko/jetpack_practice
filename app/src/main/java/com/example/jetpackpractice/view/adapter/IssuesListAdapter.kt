@@ -4,10 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jetpackpractice.R
 import com.example.jetpackpractice.databinding.IssuesItemBinding
 import com.example.jetpackpractice.model.Issues
+import com.example.jetpackpractice.view.fragment.HomeFragment
+import com.example.jetpackpractice.view.fragment.HomeFragmentDirections
 
 class IssuesListAdapter(val issuesList: ArrayList<Issues>): RecyclerView.Adapter<IssuesListAdapter.IssuesViewHolder>() {
 
@@ -25,9 +28,7 @@ class IssuesListAdapter(val issuesList: ArrayList<Issues>): RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: IssuesViewHolder, position: Int) {
         holder.view.issues = issuesList[position]
-        holder.itemView.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
-        }
+
     }
 
     override fun getItemCount()= issuesList.size
@@ -35,3 +36,11 @@ class IssuesListAdapter(val issuesList: ArrayList<Issues>): RecyclerView.Adapter
 
     class IssuesViewHolder(var view: IssuesItemBinding): RecyclerView.ViewHolder(view.root)
 }
+
+//holder.itemView.setOnClickListener { view ->
+//    val title = issuesList[position].title.toString()
+//    val body = issuesList[position].body.toString()
+//    val createdDate = issuesList[position].created_at.toString()
+//
+//    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(title,body,createdDate))
+//}
