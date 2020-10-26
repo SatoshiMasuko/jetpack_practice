@@ -9,20 +9,22 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.example.jetpackpractice.R
 import com.example.jetpackpractice.databinding.FragmentDetailBinding
+import com.example.jetpackpractice.util.loadImage
 import com.example.jetpackpractice.viewModel.DetailViewModel
 import com.example.jetpackpractice.viewModel.IssuesViewModel
+import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : Fragment() {
 
-//    private val args : DetailFragmentArgs by navArgs()
+    private val args : DetailFragmentArgs by navArgs()
     private lateinit var mBinding: FragmentDetailBinding
     companion object{
         fun newInstance() = DetailFragment()
     }
 
-//    private lateinit var viewModel: DetailViewModel
     private val viewModel: IssuesViewModel by activityViewModels()
 
 
@@ -30,22 +32,14 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        val view = inflater.inflate(R.layout.fragment_detail,container,false)
-        mBinding = FragmentDetailBinding.inflate(inflater, container, false)
-//        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        return mBinding.root
+//        article_title.text = args.title
+//        print(args.title)
+        return inflater.inflate(R.layout.fragment_detail, container, false)
     }
-//    private fun initViewModel(){
-//        mBinding.issues = viewModel
-//        viewModel.articleItems.set(args.articleInformation)
-//
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        initViewModel()
-        mBinding.executePendingBindings()
+//        mBinding.executePendingBindings()
     }
 
 }

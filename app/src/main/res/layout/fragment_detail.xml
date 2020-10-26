@@ -21,7 +21,6 @@
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@{issues.articleItems.user.profile_image_url}"
             />
         <TextView
             android:id="@+id/user_name"
@@ -30,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/user_image"
             android:layout_margin="16dp"
-            android:text="@{issues.articleItems.user.name}"
+
             />
         <TextView
             android:id="@+id/updated_date"
@@ -38,7 +37,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/user_name"
             app:layout_constraintStart_toEndOf="@+id/user_image"
-            android:text="@{issues.articleItems.created_at}"
             />
         <TextView
             android:id="@+id/article_title"
@@ -47,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@+id/user_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@{issues.articleItems.title}"/>
+            />
         <TextView
             android:id="@+id/article_body"
             android:layout_width="0dp"
@@ -55,11 +53,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/article_title"
-            android:text="@{issues.articleItems.body}"/>
+            />
+        <ProgressBar
+            android:id="@+id/loadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
 
 
+<!--    android:text="@{issues.articleItems.user.name}"-->
+<!--    android:text="@{issues.articleItems.body}"-->
+<!--    android:text="@{issues.articleItems.title}"-->
+<!--    android:text="@{issues.articleItems.created_at}"-->
+<!--    android:src="@{issues.articleItems.user.profile_image_url}"-->
 
 
 
