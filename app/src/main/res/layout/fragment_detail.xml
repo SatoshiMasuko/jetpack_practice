@@ -1,77 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--<layout>-->
+
+<!--    <data>-->
+
+<!--        <variable-->
+<!--            name="issues"-->
+<!--            type="com.example.jetpackpractice.viewModel.DetailViewModel" />-->
+<!--    </data>-->
+
+
+<!--</layout>-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".view.fragment.DetailFragment">
-    <data>
-        <variable
-            name="issues"
-            type="com.example.jetpackpractice.viewModel.DetailViewModel"  />
-    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?android:attr/actionBarSize">
 
         <ImageView
             android:id="@+id/user_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/user_image"
             android:layout_margin="16dp"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            />
         <TextView
             android:id="@+id/updated_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/user_name"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/user_image"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
         <TextView
             android:id="@+id/article_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/user_image"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_image" />
+
         <TextView
             android:id="@+id/article_body"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_title"
-            />
-        <ProgressBar
-            android:id="@+id/loadingView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/article_title" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
-</layout>
 
-
-<!--    android:text="@{issues.articleItems.user.name}"-->
-<!--    android:text="@{issues.articleItems.body}"-->
-<!--    android:text="@{issues.articleItems.title}"-->
-<!--    android:text="@{issues.articleItems.created_at}"-->
-<!--    android:src="@{issues.articleItems.user.profile_image_url}"-->
+    <!--    android:text="@{issues.articleItems.user.name}"-->
+    <!--    android:text="@{issues.articleItems.body}"-->
+    <!--    android:text="@{issues.articleItems.title}"-->
+    <!--    android:text="@{issues.articleItems.created_at}"-->
+    <!--    android:src="@{issues.articleItems.user.profile_image_url}"-->
 
 
 

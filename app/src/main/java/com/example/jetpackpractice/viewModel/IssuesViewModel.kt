@@ -49,36 +49,6 @@ class IssuesViewModel(application: Application): BaseViewModel(application) {
                 })
         )
     }
-    //Roomからデータを取得したり保存したり
-    //Roomがオブジェクト型をサポートしておらず、Userクラスの値を扱えていないため一旦コメントアウト
-
-
-//    private fun getIssuesFromDatabase(){
-//        loading.value = true
-//        launch {
-//            val issues = IssuesDatabase(getApplication()).issuesDao().getAllIssues()
-//
-//        }
-//    }
-//    private fun issuesRetrieved(issuesList: List<Issues>){
-//        issues.value = issuesList
-//        loadingError.value = false
-//        loading.value = false
-//    }
-//    private fun storeIssuesLocally(list: List<Issues>){
-//        launch {
-//            val dao = IssuesDatabase(getApplication()).issuesDao()
-//            dao.deleteAllIssues()
-//            val result = dao.insertAll(*list.toTypedArray())
-//            var i = 0
-//            while(i < list.size){
-//                list[i].uuid = result[i].toInt()
-//                ++i
-//            }
-//            issuesRetrieved(list)
-//        }
-//    }
-
     override fun onCleared() {
         super.onCleared()
         disposable.clear()

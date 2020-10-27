@@ -24,8 +24,19 @@ fun ImageView.loadImage(uri: String?, progressDrawable: CircularProgressDrawable
         .load(uri)
         .into(this)
 }
+fun ImageView.loadImageForLocal(url: String?){
+    val options = RequestOptions()
+        .error(R.drawable.ic_home_black_18dp)
+    Glide.with(context)
+        .setDefaultRequestOptions(options)
+        .load(url)
+        .into(this)
+}
 
 @BindingAdapter("android:imageUrl")
 fun loadImage(view: ImageView, url: String?){
     view.loadImage(url, getProgressDrawable(view.context))
+}
+fun displayLocalImage(view: ImageView,url:String){
+    view.loadImageForLocal(url)
 }
