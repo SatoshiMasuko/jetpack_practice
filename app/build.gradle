@@ -82,7 +82,8 @@ dependencies {
     implementation "androidx.preference:preference:$preferencesVersion"
     implementation "com.google.firebase:firebase-core:17.5.1"
     implementation "com.android.support:multidex:1.0.3"
-    // Json
+    // extra
+    implementation 'com.stephentuso:welcome:1.4.1'
 
 
 }
