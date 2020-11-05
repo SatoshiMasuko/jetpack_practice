@@ -22,23 +22,7 @@ class DetailFragment : Fragment() {
 
 
     private val args : DetailFragmentArgs by navArgs()
-
-//    private val title: String by lazy {
-//        args.title
-//    }
-//    private val body: String by lazy {
-//        args.body
-//    }
-//    private val createdAt: String by lazy {
-//        args.created
-//    }
-//    private val userImage: String by lazy{
-//        args.image
-//    }
-//    private val userName: String by lazy{
-//        args.name
-//    }
-
+    
     companion object{
         fun newInstance() = DetailFragment()
     }
