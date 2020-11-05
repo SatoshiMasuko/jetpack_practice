@@ -29,6 +29,11 @@ class StartActivity : AppCompatActivity() {
 
 
         navController = findNavController(R.id.nav_host_fragment)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            appbar.apply {
+                setExpanded(true,false)
+            }
+        }
         setupWithNavController(bottom_navigation,navController)
 
 
