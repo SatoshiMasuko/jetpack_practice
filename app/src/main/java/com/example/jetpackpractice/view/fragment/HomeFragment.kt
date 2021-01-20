@@ -14,10 +14,12 @@ import androidx.transition.TransitionInflater
 import com.example.jetpackpractice.R
 import com.example.jetpackpractice.databinding.IssuesItemBinding
 import com.example.jetpackpractice.model.Issues
+import com.example.jetpackpractice.util.DateTimeUtil
 import com.example.jetpackpractice.view.adapter.IssuesListAdapter
 import com.example.jetpackpractice.viewModel.IssuesViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.issues_item.*
+
 
 class HomeFragment : Fragment() {
 
@@ -34,7 +36,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         viewModel.display()
 
@@ -53,6 +54,8 @@ class HomeFragment : Fragment() {
         }
 
         observeViewModel()
+        DateTimeUtil().backGroundSelect(home_background)
+
     }
     private fun observeViewModel(){
         viewModel.issues.observe(viewLifecycleOwner, Observer { issues ->
@@ -76,7 +79,6 @@ class HomeFragment : Fragment() {
                     }
                 })
             }
-
         })
         viewModel.loadingError.observe(viewLifecycleOwner, Observer { isError ->
             isError.let{

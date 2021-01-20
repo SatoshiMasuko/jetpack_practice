@@ -29,25 +29,5 @@ class CalculateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        DateTimeUtil().backGroundSelect(back_ground)
     }
-
-//    private fun backGroundSelect(){
-//
-////        val image = back_ground
-//
-//        val dateObj = Date()
-//        val format = SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
-//        val display = format.format(dateObj)
-//
-//        when(display.substring(5, 7)){
-//            "12","01","02" -> back_ground?.setImageResource(R.drawable.winter_image)
-//            "03","04","05" -> back_ground?.setImageResource(R.drawable.spring_image)
-//            "06","07","08" -> back_ground?.setImageResource(R.drawable.summer_image)
-//            "09","10","11" -> back_ground?.setImageResource(R.drawable.winter_image)
-//        }
-//
-//
-//
-//    }
 }

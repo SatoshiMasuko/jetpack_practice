@@ -49,6 +49,7 @@ def rxJavaVersion = '2.1.1'
 def roomVersion = '2.3.0-alpha03'
 def navVersion = '2.3.1'
 def preferencesVersion = '1.1.1'
+def paging_version = "3.0.0-alpha02"
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -83,6 +84,8 @@ dependencies {
     implementation "androidx.preference:preference:$preferencesVersion"
     implementation "com.google.firebase:firebase-core:17.5.1"
     implementation "com.android.support:multidex:1.0.3"
+    implementation "android.arch.paging:runtime:$paging_version"
+
     // extra
     implementation 'com.stephentuso:welcome:1.4.1'
 

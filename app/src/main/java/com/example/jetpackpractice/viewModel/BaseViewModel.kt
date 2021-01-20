@@ -27,7 +27,7 @@ abstract class BaseViewModel(application: Application): AndroidViewModel(applica
 
     /**
      * ③coroutineが実際に動作するcoroutineContextを作成する。
-     * Dispatchers.MainとJobは共にCroutineContextを継承しており、
+     * Dispatchers.MainとJobは共にCoroutineContextを継承しており、
      * また、coroutineContextはplusオペレータをoverrideして実装しているため足すことができる
      */
 
